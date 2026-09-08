@@ -11,6 +11,8 @@
     "typecheck": "pnpm -r --if-present typecheck && pnpm typecheck:cocos",
     "typecheck:cocos": "node node_modules/typescript-4-1/bin/tsc -p tsconfig.cocos.json --noEmit",
     "check:cocos-boundaries": "node scripts/check-cocos-boundaries.cjs",
+    "sync:cocos-shared": "node scripts/sync-cocos-shared.cjs",
+    "check:cocos-shared": "node scripts/sync-cocos-shared.cjs --check",
     "test": "vitest run --config vitest.config.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check ."

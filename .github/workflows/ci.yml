@@ -21,4 +21,5 @@ jobs:
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm check:cocos-boundaries
+      - run: pnpm check:cocos-shared
       - run: pnpm test

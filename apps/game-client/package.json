@@ -4,8 +4,5 @@
   "uuid": "fb6662ac-60ea-4413-8f20-400102ea5538",
   "creator": {
     "version": "3.8.8"
-  },
-  "dependencies": {
-    "@drawborn/contracts": "workspace:*"
   }
 }

@@ -9,5 +9,6 @@ attached_assets
 pnpm-lock.yaml
 apps/game-client/assets/**/*.scene
 apps/game-client/assets/**/*.meta
+apps/game-client/assets/shared/
 apps/game-client/settings/
 apps/game-client/.creator/

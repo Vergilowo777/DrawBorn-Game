@@ -18,6 +18,7 @@ module.exports = {
     "attached_assets/",
     ".local/",
     ".cache/",
-    ".agents/"
+    ".agents/",
+    "apps/game-client/assets/shared/"
   ]
 };

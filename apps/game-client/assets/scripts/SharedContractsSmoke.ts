@@ -1,5 +1,5 @@
 import { _decorator, Component } from "cc";
-import { HERO_CLASSES } from "@drawborn/contracts";
+import { HERO_CLASSES } from "../shared/contracts/index";
 
 const { ccclass } = _decorator;
 

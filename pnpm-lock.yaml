@@ -51,7 +51,11 @@ importers:
         specifier: ^3.23.8
         version: 3.25.76
 
-  packages/game-data: {}
+  packages/game-data:
+    devDependencies:
+      '@drawborn/contracts':
+        specifier: workspace:*
+        version: link:../contracts
 
   packages/platform-adapters: {}
 

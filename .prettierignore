@@ -4,5 +4,6 @@ coverage
 attached_assets
 .local
 .cache
+.config
 .agents
 pnpm-lock.yaml

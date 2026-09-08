@@ -43,6 +43,12 @@ importers:
         specifier: ^22.5.5
         version: 22.20.1
 
+  apps/game-client:
+    dependencies:
+      '@drawborn/contracts':
+        specifier: workspace:*
+        version: link:../../packages/contracts
+
   packages/battle-core: {}
 
   packages/contracts:

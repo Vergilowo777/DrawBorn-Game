@@ -7,3 +7,7 @@ attached_assets
 .config
 .agents
 pnpm-lock.yaml
+apps/game-client/assets/**/*.scene
+apps/game-client/assets/**/*.meta
+apps/game-client/settings/
+apps/game-client/.creator/

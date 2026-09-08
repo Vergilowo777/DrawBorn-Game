@@ -23,7 +23,8 @@ Boundary-only Zod schemas are intentionally excluded from that compatibility pas
 
 ## Workspace boundaries
 
-- `apps/game-client`: placeholder for a local Cocos Creator 4.0 LTS project.
+- `apps/game-client`: real Cocos Creator 3.8.8 project source imported from the user's locally
+  created and previewed Empty (2D) project.
 - `apps/api`: minimal Fastify health endpoint only.
 - `packages/battle-core`: deterministic, engine-independent battle primitives.
 - `packages/contracts`: shared types and boundary-only Zod schemas.
@@ -33,6 +34,7 @@ Boundary-only Zod schemas are intentionally excluded from that compatibility pas
 Client-shared source must remain compatible with TypeScript 4.1 syntax. In particular, it must
 not depend on DOM, Node.js, networking, databases, Cocos, implicit system time, `Date.now`, or
 `Math.random`. Cocos Creator does not necessarily consume a normal workspace `tsconfig.json`;
-imports, aliases, and compiler behavior must be verified after the real project is created
-locally. Zod is restricted to validation boundaries and is not a dependency of `battle-core`
-or `game-data`.
+imports, aliases, and compiler behavior must be verified locally. The included `TestScene` was
+created and previewed by the user in Cocos Creator 3.8.8; importing `@drawborn/contracts`
+through `SharedContractsSmoke.ts` still requires the next local editor verification. Zod is
+restricted to validation boundaries and is not a dependency of `battle-core` or `game-data`.

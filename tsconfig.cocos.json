@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "packages/battle-core/src/**/*.ts",
+    "packages/contracts/src/battle.ts",
+    "packages/contracts/src/enums.ts",
+    "packages/contracts/src/ids.ts",
+    "packages/contracts/src/index.ts",
+    "packages/game-data/src/**/*.ts",
+    "packages/platform-adapters/src/**/*.ts"
+  ]
+}

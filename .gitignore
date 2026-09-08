@@ -1,0 +1,20 @@
+node_modules/
+dist/
+coverage/
+.cache/
+.local/
+.agents/
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+*.temp
+.DS_Store
+
+# Cocos-generated output and local editor state
+apps/game-client/build/
+apps/game-client/library/
+apps/game-client/local/
+apps/game-client/temp/
+apps/game-client/profiles/

@@ -1,0 +1,27 @@
+{
+  "name": "drawborn",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.26.1",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .ts,.js,.cjs",
+    "typecheck": "pnpm -r --if-present typecheck && pnpm typecheck:cocos",
+    "typecheck:cocos": "node node_modules/typescript-4-1/bin/tsc -p tsconfig.cocos.json --noEmit",
+    "test": "vitest run --config vitest.config.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3",
+    "typescript": "5.5.4",
+    "typescript-4-1": "npm:typescript@4.1.6",
+    "vitest": "3.2.7"
+  }
+}

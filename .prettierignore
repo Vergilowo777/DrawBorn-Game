@@ -1,0 +1,8 @@
+node_modules
+dist
+coverage
+attached_assets
+.local
+.cache
+.agents
+pnpm-lock.yaml

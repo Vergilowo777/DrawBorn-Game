@@ -3,12 +3,14 @@ const fs = require("fs");
 const path = require("path");
 
 const roots = [
+  "apps/game-client/assets/scripts/creation/domain",
   "packages/battle-core/src",
   "packages/game-data/src",
   "packages/platform-adapters/src"
 ];
 const contractFiles = [
   "packages/contracts/src/battle.ts",
+  "packages/contracts/src/creation.ts",
   "packages/contracts/src/enums.ts",
   "packages/contracts/src/ids.ts",
   "packages/contracts/src/index.ts"
@@ -23,9 +25,12 @@ const forbidden = [
   ["process", /\bprocess\b/],
   ["Buffer", /\bBuffer\b/],
   ["node: module", /(?:from\s+|import\s*\()\s*["']node:/],
+  ["cc import", /(?:from\s+|import\s*\()\s*["']cc(?:\/[^"']*)?["']/],
   ["require()", /\brequire\s*\(/],
   ["Math.random", /\bMath\.random\s*\(/],
-  ["Date.now", /\bDate\.now\s*\(/]
+  ["Date.now", /\bDate\.now\s*\(/],
+  ["new Date()", /\bnew\s+Date\s*\(/],
+  ["Date()", /\bDate\s*\(/]
 ];
 
 function listTypeScriptFiles(root) {

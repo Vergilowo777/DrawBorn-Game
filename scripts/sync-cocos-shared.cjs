@@ -7,6 +7,7 @@ const targetRoot = path.join(repositoryRoot, "apps/game-client/assets/shared");
 const manifest = [
   ["packages/contracts/src/index.ts", "contracts/index.ts"],
   ["packages/contracts/src/battle.ts", "contracts/battle.ts"],
+  ["packages/contracts/src/creation.ts", "contracts/creation.ts"],
   ["packages/contracts/src/enums.ts", "contracts/enums.ts"],
   ["packages/contracts/src/ids.ts", "contracts/ids.ts"],
   ["packages/battle-core/src/index.ts", "battle-core/index.ts"],
@@ -14,6 +15,7 @@ const manifest = [
   ["packages/game-data/src/classes.ts", "game-data/classes.ts"],
   ["packages/game-data/src/equipment.ts", "game-data/equipment.ts"],
   ["packages/game-data/src/skills.ts", "game-data/skills.ts"],
+  ["packages/game-data/src/visual-tags.ts", "game-data/visual-tags.ts"],
   ["packages/platform-adapters/src/index.ts", "platform-adapters/index.ts"],
   ["packages/platform-adapters/src/analytics.ts", "platform-adapters/analytics.ts"],
   ["packages/platform-adapters/src/auth.ts", "platform-adapters/auth.ts"],

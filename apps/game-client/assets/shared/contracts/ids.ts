@@ -1,7 +1,11 @@
 declare const battleSeedBrand: unique symbol;
+declare const visualTagIdBrand: unique symbol;
 
 export type SkillId = `skill.${string}`;
 export type EquipmentId = `equipment.${string}`;
+export type VisualTagId = `tag.${string}` & {
+  readonly [visualTagIdBrand]: "VisualTagId";
+};
 export type BattleSeed = string & { readonly [battleSeedBrand]: "BattleSeed" };
 
 export function asSkillId(value: string): SkillId {
@@ -16,6 +20,13 @@ export function asEquipmentId(value: string): EquipmentId {
     throw new Error("Invalid EquipmentId");
   }
   return value as EquipmentId;
+}
+
+export function asVisualTagId(value: string): VisualTagId {
+  if (!/^tag\.[a-z0-9_.-]+$/.test(value)) {
+    throw new Error("Invalid VisualTagId");
+  }
+  return value as VisualTagId;
 }
 
 export function asBattleSeed(value: string): BattleSeed {

@@ -4,16 +4,23 @@ const path = require("path");
 
 const roots = [
   "apps/game-client/assets/scripts/creation/domain",
+  "apps/game-client/assets/scripts/creation/spike/domain",
+  "apps/game-client/assets/scripts/creation/spike/export",
   "packages/battle-core/src",
   "packages/game-data/src",
   "packages/platform-adapters/src"
 ];
 const contractFiles = [
+  "apps/game-client/assets/scripts/creation/spike/cocos/shared-import-probe.ts",
+  "apps/game-client/assets/scripts/creation/spike/cocos/texture-orientation.ts",
   "packages/contracts/src/battle.ts",
   "packages/contracts/src/creation.ts",
   "packages/contracts/src/enums.ts",
   "packages/contracts/src/ids.ts",
   "packages/contracts/src/index.ts"
+];
+const cocosComponentFiles = [
+  "apps/game-client/assets/scripts/creation/spike/cocos/DrawingSpike.ts"
 ];
 const forbidden = [
   ["document", /\bdocument\b/],
@@ -61,6 +68,27 @@ for (const file of files) {
       }
     }
   });
+}
+
+for (const file of cocosComponentFiles) {
+  const source = fs.readFileSync(file, "utf8");
+  for (const [name, pattern] of forbidden) {
+    if (name !== "cc import" && pattern.test(source)) {
+      violations.push(`${file}: forbidden ${name}`);
+    }
+  }
+  const importPattern = /(?:from\s+|import\s*\(\s*)["']([^"']+)["']/g;
+  let match;
+  while ((match = importPattern.exec(source)) !== null) {
+    const imported = match[1];
+    if (
+      imported !== "cc" &&
+      !imported.startsWith(".") &&
+      !imported.startsWith("../../../../shared/")
+    ) {
+      violations.push(`${file}: forbidden Cocos import ${imported}`);
+    }
+  }
 }
 
 if (violations.length > 0) {

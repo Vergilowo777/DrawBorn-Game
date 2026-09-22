@@ -11,6 +11,10 @@
   },
   "include": [
     "apps/game-client/assets/scripts/creation/domain/**/*.ts",
+    "apps/game-client/assets/scripts/creation/spike/domain/**/*.ts",
+    "apps/game-client/assets/scripts/creation/spike/export/**/*.ts",
+    "apps/game-client/assets/scripts/creation/spike/cocos/shared-import-probe.ts",
+    "apps/game-client/assets/scripts/creation/spike/cocos/texture-orientation.ts",
     "packages/battle-core/src/**/*.ts",
     "packages/contracts/src/battle.ts",
     "packages/contracts/src/creation.ts",

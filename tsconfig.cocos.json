@@ -10,8 +10,10 @@
     "skipLibCheck": true
   },
   "include": [
+    "apps/game-client/assets/scripts/creation/domain/**/*.ts",
     "packages/battle-core/src/**/*.ts",
     "packages/contracts/src/battle.ts",
+    "packages/contracts/src/creation.ts",
     "packages/contracts/src/enums.ts",
     "packages/contracts/src/ids.ts",
     "packages/contracts/src/index.ts",

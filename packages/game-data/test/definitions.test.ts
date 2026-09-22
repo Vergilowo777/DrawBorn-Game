@@ -5,7 +5,10 @@ import {
   ENABLED_MVP_CLASSES,
   EQUIPMENT_IDS,
   isEnabledMvpClass,
-  SKILL_IDS
+  SKILL_IDS,
+  STARTING_SKILL_DEFINITIONS,
+  VISUAL_TAGS,
+  VISUAL_TAG_IDS
 } from "../src";
 
 describe("MVP class allowlist", () => {
@@ -27,5 +30,26 @@ describe("MVP class allowlist", () => {
 
     expect(skillId).toBe("skill.vanguard.strike");
     expect(equipmentId).toBe("equipment.training.blade");
+  });
+
+  it("defines exactly six unique starting skills and three for each enabled class", () => {
+    const ids = STARTING_SKILL_DEFINITIONS.map((skill) => skill.id);
+
+    expect(new Set(ids).size).toBe(6);
+    expect(
+      STARTING_SKILL_DEFINITIONS.filter((skill) => skill.heroClass === "Vanguard")
+    ).toHaveLength(3);
+    expect(STARTING_SKILL_DEFINITIONS.filter((skill) => skill.heroClass === "Mystic")).toHaveLength(
+      3
+    );
+    expect(ids).toContain(SKILL_IDS.VANGUARD_STRIKE);
+    expect(ids).toContain(SKILL_IDS.MYSTIC_BURST);
+  });
+
+  it("keeps visual tag IDs finite and labels separate", () => {
+    expect(VISUAL_TAGS.length).toBeGreaterThan(0);
+    expect(new Set(VISUAL_TAG_IDS).size).toBe(VISUAL_TAG_IDS.length);
+    expect(VISUAL_TAGS.every((tag) => tag.id.startsWith("tag."))).toBe(true);
+    expect(VISUAL_TAGS.every((tag) => tag.label.length > 0)).toBe(true);
   });
 });

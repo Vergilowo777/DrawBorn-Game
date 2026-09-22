@@ -15,7 +15,7 @@ Files under `packages/` are the only canonical shared source. Cocos Creator 3.8.
 locally not to resolve extensionless imports within TypeScript sources reached through the
 pnpm workspace: `@drawborn/contracts` failed at its internal `./battle` import.
 
-`pnpm sync:cocos-shared` copies the 15 approved Cocos-facing source files byte-for-byte into
+`pnpm sync:cocos-shared` copies the 17 approved Cocos-facing source files byte-for-byte into
 `assets/shared/`, where Cocos can resolve them. Do not edit this mirror manually. Run the sync
 command after every canonical shared-source change; CI uses `pnpm check:cocos-shared` to reject
 missing, extra, or modified mirror `.ts` files. Generated Cocos `.meta` files are ignored by
